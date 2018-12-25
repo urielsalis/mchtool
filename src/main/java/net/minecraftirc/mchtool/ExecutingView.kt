@@ -25,9 +25,9 @@ class ExecutingView : View() {
 private fun runDiagnostics(): String {
     val dxdiag = Dxdiag()
     val hjt = Hjt()
-    dxdiag.execute()
-    hjt.execute()
+    val dxdiagResult = dxdiag.execute().pasteLink
+    val hjtResult = hjt.execute().pasteLink
     dxdiag.cleanup()
     hjt.cleanup()
-    return "Dxdiag: $dxdiag, HJT: $hjt"
+    return "Dxdiag: $dxdiagResult, HJT: $hjtResult"
 }
